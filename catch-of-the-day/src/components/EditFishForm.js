@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class EditFishForm extends React.Component {
+
   handleChange = (event) => {
     console.log('Editing Fish!');
     console.log(event.currentTarget.name);
@@ -10,58 +11,53 @@ class EditFishForm extends React.Component {
     const updatedFish = {
       ...this.props.fish,
       [event.currentTarget.name]: event.currentTarget.value
-    };
+    }
     this.props.updateFish(this.props.index, updatedFish);
-  };
-  
+    // console.log('Updated Fish!');
+    // console.log(updatedFish);
+  }
+
   static propTypes = {
     fish: PropTypes.shape({
       name: PropTypes.string,
+      price: PropTypes.number,
       status: PropTypes.string,
-      desc:  PropTypes.string,
-      image: PropTypes.string,
-      price: PropTypes.number
-    }),
-    index: PropTypes.string,
-    updateFish: PropTypes.func
+      desc: PropTypes.string,
+      image: PropTypes.string
+    })
   }
-  
+
   render(){
     return (
       <div className="fish-edit">
-        <input 
-          type="text" 
-          name="name" 
+        <input
+          name="name"
+          type="text"
           onChange={this.handleChange}
-          placeholder="Name" 
-          value={this.props.fish.name}
-        />
-        <input 
-          type="text" 
-          name="price" 
+          value={this.props.fish.name} />
+        <input
+          name="price"
+          type="text"
           onChange={this.handleChange}
-          placeholder="Price" 
-          value={this.props.fish.price}
-        />
-        <select name="status" onChange={this.handleChange} value={this.props.fish.status}>
+          value={this.props.fish.price} />
+        <select
+          name="status"
+          onChange={this.handleChange}
+          value={this.props.fish.status}>
           <option value="available">Fresh!</option>
           <option value="unavailable">Sold Out!</option>
         </select>
-        <textarea 
-          name="desc" 
+        <textarea
+          name="desc"
+          type="text"
           onChange={this.handleChange}
-          placeholder="Description" 
           value={this.props.fish.desc}></textarea>
-        <input 
-          type="text" 
-          name="image" 
+        <input
+          name="image"
+          type="text"
           onChange={this.handleChange}
-          placeholder="Image" 
-          value={this.props.fish.image}
-        />
-        <button onClick={() => this.props.deleteFish(this.props.index)}>
-          Remove Fish
-        </button>
+          value={this.props.fish.image} />
+        <button type="submit" onClick={() => this.props.deleteFish(this.props.index)}>Remove Fish</button>
       </div>
     )
   }
