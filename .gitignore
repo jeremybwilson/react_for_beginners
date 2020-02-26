@@ -9,13 +9,14 @@
 ###################
 node_modules
 node_modules/
+build
+build/
 dist
 deploy.log
 config/shopify.yml
 npm-debug.log
 .env
 .env.*
-
 
 # Compiled source #
 ###################
@@ -67,4 +68,3 @@ secrets.json
 .jekyll-metadata
 .ruby-version
 notes.md
-catch-of-the-day/build/
