@@ -63,11 +63,11 @@ class App extends React.Component {
     fishes[`fish${Date.now()}`] = fish;
     // 3. Set the new fishes object to state
     this.setState({
-      // fishes: fishes
       fishes
     });
   };
 
+  // create the updateFish method
   updateFish = (key, updatedFish) => {
     // 1. Take a copy of the current state (fish)
     // we are already in the component where the state lives
@@ -95,6 +95,7 @@ class App extends React.Component {
 
   }
 
+  // handle the addToOrder event
   addToOrder = (key) => {
     console.log('Adding to the order');
     // 1. take a copy of state
@@ -105,11 +106,12 @@ class App extends React.Component {
     this.setState({ order });
   }
 
+  // handle the removeFromOrder event
   removeFromOrder = (key) => {
     console.log('Removing from the order');
     // 1. take a copy of state
     const order = { ...this.state.order };
-    // 2. remove that itemf from order
+    // 2. remove that item from order
     delete order[key];
     // 3. Call setState to update our state object
     this.setState({ order });

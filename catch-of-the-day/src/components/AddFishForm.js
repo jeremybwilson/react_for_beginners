@@ -15,7 +15,7 @@ class AddFishForm extends React.Component {
   createFish = (event) => {
     // 1. stop the form from submitting
     event.preventDefault();
-    console.log('Making a FISH');
+    console.log('Creating a Fish');
     // 2. create a fish object to store form input
     const fish = {
       name: this.nameRef.current.value,
@@ -23,7 +23,7 @@ class AddFishForm extends React.Component {
       status: this.statusRef.current.value,
       desc: this.descRef.current.value,
       image: this.imageRef.current.value
-    };
+    }
 
     console.log(fish);
     // 3. set the fish into state
@@ -34,15 +34,15 @@ class AddFishForm extends React.Component {
 
   render(){
     return (
-      <form className="fish-edit" onSubmit={this.createFish}>
-        <input name="name" ref={this.nameRef} type="text" placeholder="Name" />
-        <input name="price" ref={this.priceRef} type="text" placeholder="Price" />
-        <select name="status" ref={this.statusRef} type="text" placeholder="Status">
+      <form action="" className="fish-edit" onSubmit={this.createFish}>
+        <input type="text" name="name" ref={this.nameRef} placeholder="Name" />
+        <input type="text" name="price" ref={this.priceRef} placeholder="Price" />
+        <select name="status" ref={this.statusRef}>
           <option value="available">Fresh!</option>
           <option value="unavailable">Sold Out!</option>
         </select>
-        <textarea name="desc" ref={this.descRef} type="text" placeholder="Desc"></textarea>
-        <input name="image" ref={this.imageRef} type="text" placeholder="Image" />
+        <textarea type="text" name="desc" ref={this.descRef} placeholder="Description"></textarea>
+        <input type="text" name="image" ref={this.imageRef} placeholder="Image" />
         <button type="submit">+ Add Fish</button>
       </form>
     )
