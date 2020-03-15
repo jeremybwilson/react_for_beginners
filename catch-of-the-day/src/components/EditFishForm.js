@@ -1,31 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import { render } from 'react-dom';
 
 class EditFishForm extends React.Component {
-  static propTypes = {
-    fish: PropTypes.shape({
-      name: PropTypes.string,
-      price: PropTypes.number,
-      status: PropTypes.string,
-      desc: PropTypes.string,
-      image: PropTypes.string
-    }),
-    index: PropTypes.string,
-    updateFish: PropTypes.func
-  }
 
-  handleChange = (event) => {
+  handleChange = event => {
     console.log('Handling the event!');
+    console.log(event.target);
     // update that fish
     // 1. Take a copy of the current fish
     const updatedFish = {
       ...this.props.fish,
-      // name: event.currentTarget.value
+      // name: event.currentTarget.value,
       [event.currentTarget.name]: event.currentTarget.value
     }
     this.props.updateFish(this.props.index, updatedFish);
-    // console.log(updatedFish);
-  };
+  }
 
   render(){
     return (
@@ -62,7 +51,6 @@ class EditFishForm extends React.Component {
           onChange={this.handleChange}
           value={this.props.fish.image}
         />
-        {/* <button type="submit" onClick={() => this.props.deleteFish(this.props.index)}>Remove Fish</button> */}
         <button type="submit" onClick={() => this.props.deleteFish(this.props.index)}>Remove Fish</button>
       </div>
     )

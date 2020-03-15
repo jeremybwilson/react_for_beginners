@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import { render } from 'react-dom';
 
 class AddFishForm extends React.Component {
   nameRef = React.createRef();
@@ -8,28 +8,23 @@ class AddFishForm extends React.Component {
   descRef = React.createRef();
   imageRef = React.createRef();
 
-  static propTypes = {
-    addFish: PropTypes.func
-  }
-
   createFish = (event) => {
     // 1. stop the form from submitting
     event.preventDefault();
-    console.log('Creating a Fish');
-    // 2. create a fish object to store form input
+    console.log('Making a Fish!');
+    // 2. create a fish object
     const fish = {
       name: this.nameRef.current.value,
-      price: parseFloat(this.priceRef.current.value),
+      price: parseFloat(this.priceRef.current.value),  // eg., 1054 cents
       status: this.statusRef.current.value,
       desc: this.descRef.current.value,
       image: this.imageRef.current.value
     }
-
-    console.log(fish);
     // 3. set the fish into state
     this.props.addFish(fish);
     // 4. refresh the form
     event.currentTarget.reset();
+
   }
 
   render(){

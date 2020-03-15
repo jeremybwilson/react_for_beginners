@@ -23,6 +23,7 @@ export function slugify(text) {
 export function getFunName() {
   const adjectives = [
     "adorable",
+    "achy",
     "beautiful",
     "clean",
     "drab",
@@ -56,6 +57,7 @@ export function getFunName() {
     "panicky",
     "repulsive",
     "scary",
+    "stanky",
     "thoughtless",
     "uptight",
     "worried"
@@ -73,6 +75,7 @@ export function getFunName() {
     "geese",
     "halves",
     "matildas",
+    "kittens",
     "knives",
     "wives",
     "lives",

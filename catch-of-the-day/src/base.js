@@ -1,4 +1,4 @@
-import Rebase from "re-base";
+import Rebase from 're-base';
 import firebase from "firebase";
 
 // Initialize default app
@@ -7,26 +7,18 @@ import firebase from "firebase";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBQsXN1zNgsfin0muZbKSWDH0CEprSAAQk",                  // Auth / General Use
-  authDomain: "catch-of-the-day-jeremy-1.firebaseapp.com",            // Auth with popup/redirect
-  databaseURL: "https://catch-of-the-day-jeremy-1.firebaseio.com",    // Realtime Database
-  projectId: "catch-of-the-day-jeremy-1"
+  apiKey: "AIzaSyBQsXN1zNgsfin0muZbKSWDH0CEprSAAQk",
+  authDomain: "catch-of-the-day-jeremy-1.firebaseapp.com",
+  databaseURL: "https://catch-of-the-day-jeremy-1.firebaseio.com",
+  projectId: "catch-of-the-day-jeremy-1",
 };
-
-// const firebaseConfig = {
-//   apiKey: "AIzaSyB9gLOnr7OKUOhORIKOuoSczXN3ThXwkxc",                  // Auth / General Use
-//   authDomain: "catch-of-the-day-jeremy-1fcdf.firebaseapp.com",            // Auth with popup/redirect
-//   databaseURL: "https://catch-of-the-day-jeremy-1fcdf.firebaseio.com",    // Realtime Database
-//   projectId: "catch-of-the-day-jeremy-1fcdf"
-// };
-
 // Initialize Firebase
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 const base = Rebase.createClass(firebaseApp.database());
 
-// this is a named export
+// This is a named export
 export { firebaseApp };
 
-// this is a default export
+// This is a default export
 export default base;
